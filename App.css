@@ -1,0 +1,1284 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f0f4f8;
+  color: #333;
+}
+
+
+
+/* Navbar Styles */
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem; /* Reduced padding for smaller screens */
+  background-color: #1f2937; /* Dark Gray */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #f8fafc; /* Light Gray */
+  margin: 0 0.5rem; /* Reduced margin for compact layout */
+  padding: 0.4rem 0.8rem; /* Smaller padding */
+  border: 2px solid transparent;
+  border-radius: 5px;
+  font-size: 0.9rem; /* Reduced font size */
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Animations */
+.navbar a:hover {
+  color: #0ea5e9; /* Sky Blue */
+  border-color: #0ea5e9;
+  background-color: rgba(14, 165, 233, 0.1); /* Transparent Blue */
+  transform: scale(1.05); /* Slightly smaller scale effect */
+  box-shadow: 0 4px 10px rgba(14, 165, 233, 0.3);
+  animation: hover-pulse 0.6s ease-in-out;
+}
+
+/* Active Link Styling */
+.navbar a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #0ea5e9;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar a:hover::after {
+  width: 80%;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 320px) {
+  .navbar {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align links to the left */
+    padding: 0.5rem; /* Compact padding */
+  }
+  .navbar a {
+    margin: 0.2rem 0; /* Vertical spacing between links */
+    font-size: 0.8rem; /* Smaller font size */
+    width: 100%; /* Links take full width */
+    text-align: left; /* Align text to the left */
+    padding: 0.5rem; /* Add padding for touch targets */
+  }
+}
+
+/* Keyframes */
+@keyframes hover-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes mobile-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+/* Home Section Styling */
+.home-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  background-color: #2c3e50; /* Dark blue-grey for a professional look */
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 0 20px; /* Padding for smaller screens */
+}
+
+/* Content Styling */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem;
+  max-width: 1200px; /* Limit the content width */
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.6); /* Slight background overlay */
+  border: 2px solid transparent; /* Start with a transparent border */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth border transition */
+}
+
+/* Hover Effects for Content */
+.content:hover {
+  border-color: #3498db; /* Interactive border color */
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3); /* Shadow on hover */
+}
+
+/* Header Styling */
+.content h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffffff;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Added transition for scale */
+}
+
+/* Header Hover Effect */
+.content h1:hover {
+  color: #3498db; /* Bright color on hover for interactivity */
+  transform: scale(1.05); /* Scale up effect */
+}
+
+/* Interactive Text Styling */
+.content .interactive-text {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #ecf0f1; /* Light color for text */
+  margin-top: 10px;
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Interactive Text Span Styling */
+.content .interactive-text span {
+  display: inline-block;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Interactive Text Hover Effect */
+.content .interactive-text span:hover {
+  color: #f39c12; /* Golden color for hover */
+  transform: translateY(-5px); /* Slight raise effect */
+}
+
+/* Image Styling */
+.content img {
+  width: 200px; /* Slightly larger image */
+  height: 200px; /* Equal height and width for a rounded image */
+  border-radius: 50%;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Transition for border and shadow */
+  object-fit: cover; /* Ensures image fits properly */
+}
+
+/* Image Hover Effect */
+.content img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+  border: 4px solid #3498db; /* Interactive border on hover */
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 320px) {
+  /* Home Section Styling */
+  .home-section {
+    height: auto; /* Allow content to define the height */
+    padding: 1rem; /* Add more padding for smaller screens */
+    text-align: center; /* Center-align the text for a compact layout */
+  }
+
+  /* Content Styling */
+  .content {
+    flex-direction: column; /* Stack content vertically */
+    gap: 1.5rem; /* Reduce the gap between elements */
+    padding: 1.5rem; /* Smaller padding */
+    border-radius: 10px; /* Slightly smaller border radius */
+  }
+
+  /* Header Styling */
+  .content h1 {
+    font-size: 5vw; /* Use viewport width for dynamic scaling */
+    max-font-size: 1.5rem; /* Limit the maximum size */
+    min-font-size: 1.2rem; /* Set a minimum size for readability */
+    margin-bottom: 1rem; /* Add space below the header */
+  }
+
+  /* Interactive Text Styling */
+  .content .interactive-text {
+    font-size: 1rem; /* Smaller font size for text */
+    line-height: 1.5; /* Adjust line height for readability */
+  }
+
+  /* Interactive Text Span Styling */
+  .content .interactive-text span {
+    margin-right: 0.8rem; /* Reduce spacing between spans */
+  }
+
+  /* Image Styling */
+  .content img {
+    width: 150px; /* Smaller image */
+    height: 150px; /* Keep dimensions proportional */
+    margin-bottom: 1rem; /* Add space below the image */
+  }
+}
+
+
+
+/* About Section */
+/* About Section Enhancements */
+.about-section {
+  background-color:#1f2937;
+  padding: 60px;
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  width: screen;
+  margin: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Heading Styling (without glow effect) */
+.about-section h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #f9c74f;
+  border-bottom: 5px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Paragraph Styling */
+.about-content p {
+  font-size: 1.4rem;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+  
+  margin:  0px;
+  border: 3px solid transparent;
+  transition: all 0.5s ease-in-out;
+
+}
+.about-content{
+  border-radius:30px;
+}
+
+.about-content p strong {
+  color: #f9c74f;
+}
+
+.about-content p a {
+  color: #ffcc00;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.about-content p a:hover {
+  color: #f4a261;
+}
+
+.about-content p:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffcc00;
+  border-color: #f4d03f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px;
+  }
+
+  .about-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-content p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  /* About Section Adjustments */
+  .about-section {
+    padding: 20px; /* Reduce padding for smaller screens */
+    text-align: center; /* Ensure content is centered */
+  }
+
+  .about-section h2 {
+    font-size: 1.8rem; /* Adjust heading size for small screens */
+    margin-bottom: 20px; /* Reduce bottom margin */
+    padding-bottom: 5px; /* Adjust padding for alignment */
+  }
+
+  .about-content {
+    border-radius: 20px; /* Reduce border radius */
+  }
+
+  .about-content p {
+    font-size: 1rem; /* Smaller font size for readability */
+    padding: 10px 15px; /* Compact padding for smaller screens */
+    margin: 10px 0; /* Adjust margins */
+  }
+
+  .about-content p:hover {
+    transform: translateY(-5px) scale(1.03); /* Subtle hover effect */
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3); /* Softer shadow */
+    background: rgba(255, 255, 255, 0.15); /* Slightly transparent background */
+    color: #f9c74f; /* Ensure contrast */
+    border-color: #ffcc00; /* Adjust border color */
+  }
+}
+
+
+
+
+
+/* General Section Styling */
+.skills-section {
+  background:  #2c3e50;
+  padding: 50px;
+  border-radius: 0px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+/* Section Hover Animation */
+.skills-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading Styling with Hover Effect */
+.skills-section h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out;
+}
+
+.skills-section h1::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: #ffcc00;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+
+/* Hover Effect for h1 */
+.skills-section h1:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.skills-section h1:hover {
+  color: #ffcc00;
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Grid Layout */
+.skills-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Skill Categories */
+.skill-category {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  max-width: 30%;
+  min-width: 280px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  position: relative;
+}
+
+/* Skill Category Hover Effects */
+.skill-category:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-color: #ffcc00;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Hover Border Animation */
+.skill-category::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  transform: scale(0);
+}
+
+.skill-category:hover::after {
+  transform: scale(1);
+}
+
+/* Headings for Each Skill Category */
+.skill-category h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color:#CBDCEB;
+  border-bottom: 2px solid #ffffff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Skill List Styling */
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-category li {
+  font-size: 1.2rem;
+  padding: 10px;
+  margin: 5px 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+/* Hover Effects for List Items */
+.skill-category li:hover {
+  background: #ffcc00;
+  color: #4a90e2;
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .skill-category {
+    max-width: 90%;
+  }
+}
+@media (max-width: 320px) {
+  /* General Section Adjustments */
+  .skills-section {
+    padding: 10px; /* Reduce padding for tighter spacing */
+    background: #1e293b; /* Add a sleek dark background for contrast */
+  }
+
+  .skills-section h1 {
+    font-size: 1.4rem; /* Smaller heading size */
+    margin-bottom: 10px; /* Reduce bottom margin */
+    color: #facc15; /* Bright accent color for headings */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for clarity */
+  }
+
+  /* Grid Layout Adjustments */
+  .skills-grid {
+    flex-direction: column; /* Stack categories vertically */
+    gap: 8px; /* Tighter spacing between categories */
+  }
+
+  /* Individual Skill Box Adjustments */
+  .skill-category {
+    max-width: 95%; /* Slightly reduced width for compactness */
+    padding: 8px; /* Equal padding for uniformity */
+    margin: 8px; /* Equal margin to match padding */
+    background: #334155; /* Add depth with a darker box background */
+    border-radius: 5px; /* Softer edges */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Gentle shadow for lift */
+    border: 1px solid #475569; /* Subtle border for definition */
+    position: relative;
+    overflow: hidden; /* Clean edges for hover effects */
+    transition: all 0.3s ease-in-out;
+  }
+
+  .skill-category:hover {
+    transform: scale(1.05); /* Attractive scaling effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    border-color: #facc15; /* Highlight border on hover */
+  }
+
+  /* Skill Category Heading */
+  .skill-category h3 {
+    font-size: 1.1rem; /* Compact heading size */
+    margin-bottom: 6px; /* Tighter spacing */
+    color: #f8fafc; /* Clean and contrasting text color */
+    border-bottom: 1px solid #facc15; /* Highlighted separator */
+  }
+
+  /* Skill List Styling */
+  .skill-category ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .skill-category li {
+    font-size: 0.85rem; /* Smaller text size for compactness */
+    padding: 5px; /* Tighter padding for list items */
+    margin: 3px 0; /* Compact spacing */
+    background: rgba(255, 255, 255, 0.1); /* Light overlay effect */
+    color: #e2e8f0; /* Neutral text color */
+    border-radius: 4px; /* Smooth edges */
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .skill-category li:hover {
+    transform: translateY(-3px) scale(1.03); /* Subtle lift effect */
+    background: #facc15; /* Bright hover background */
+    color: #1e293b; /* Contrasting text color on hover */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+  }
+
+  /* Additional Design Enhancements */
+  .skill-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(250, 204, 21, 0.1); /* Faint highlight overlay */
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 5px;
+  }
+
+  .skill-category:hover::before {
+    transform: scale(1); /* Expanding background highlight */
+  }
+}
+
+
+
+
+
+
+/* General Section Styling */
+#experience {
+  padding: 40px 15px; /* Adjust padding for smaller screens */
+  background:#1f2937;
+  background-size: 400% 400%;
+  text-align: center;
+  border-radius: 0px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  animation: animate-background 8s infinite;
+  overflow: hidden;
+  transform: translateZ(0);
+  will-change: background-position;
+}
+
+@keyframes animate-background {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Section Heading Styling */
+#experience h2 {
+  font-size: 2.5rem; /* Smaller heading size */
+  margin-bottom: 20px; /* Reduce margin */
+  color: #f9c74f;
+  position: relative;
+  display: inline-block;
+  background: #f9c74f;
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-text 6s infinite, fadeInSlide 1s ease-out;
+}
+
+@keyframes gradient-text {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+#experience h2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #ff7e5f;
+  bottom: -10px;
+  left: 0;
+  animation: fadeInSlide 1.5s ease-out;
+}
+
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Experience Item Styling */
+.experience-item {
+  margin: 30px auto; /* Reduced margin */
+  max-width: 75%; /* More compact width */
+  padding: 45px; /* Reduced padding */
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out forwards;
+  transition: transform 0.8s ease, box-shadow 0.8s ease;
+  transform-origin: center;
+  perspective: 800px;
+}
+
+.experience-item:hover {
+  transform: rotateX(10deg) scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* Enhanced Scroll Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.9) rotateX(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0);
+  }
+}
+
+/* Experience Title Styling */
+.experience-item h3 {
+  font-size: 2.3rem; /* Adjusted heading size */
+  margin-bottom: 15px; /* Reduced margin */
+  background: #155E95;
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.4s ease, text-shadow 0.4s ease;
+}
+
+.experience-item:hover h3 {
+  transform: scale(1.2);
+  text-shadow: 0 5px 15px rgba(5, 10, 5, 0.6);
+  animation: gradient-text 6s infinite;
+}
+
+/* Paragraph Styling with Bold */
+.experience-item p {
+  font-size: 1.8rem; /* Smaller text size */
+  color: #444;
+  margin: 12px 0;
+  line-height: 1.8;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.4s ease;
+}
+
+.experience-item p:hover {
+  color: #222;
+  transform: scale(1.05);
+}
+
+/* Image Styling */
+.experience-item img {
+  width: 100%;
+  max-width: 180px; /* Smaller image width */
+  margin: 20px auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.experience-item img:hover {
+  transform: rotateY(20deg) scale(1.2);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 320px) {
+  #experience h2 {
+    font-size: 1.8rem; /* Further reduced heading size */
+  }
+
+  .experience-item {
+    padding: 15px; /* Further reduce padding for smaller screens */
+  }
+
+  .experience-item h3 {
+    font-size: 1.4rem; /* Smaller heading size */
+  }
+
+  .experience-item p {
+    font-size: 0.9rem; /* Smaller font size */
+  }
+
+  .experience-item img {
+    max-width: 120px; /* Adjust image size */
+  }
+}
+
+/* Projects Section */
+#projects {
+  padding: 60px 15px;
+  background-color: #2c3e50; /* Light background for a clean look */
+  color: #333;
+  text-align: center;
+  animation: fadeIn 1.5s ease-out;
+  position: relative;
+}
+
+/* Section Heading Styling */
+#projects h2 {
+  font-size: 2rem; /* Reduced size */
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 8px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#projects h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: #3498db; /* Blue accent underline */
+  transition: width 0.3s ease;
+}
+
+#projects h2:hover {
+  color: #3498db; /* Hover color */
+  transform: translateY(-3px);
+}
+
+#projects h2:hover::after {
+  width: 80%;
+}
+
+/* Project Item Styling */
+.project-item {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-item:hover {
+  transform: translateY(-10px);
+  background-color: #ecf0f1; /* Light grey background on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient Effect for H3 */
+.project-item h3 {
+  font-size: 1.5rem; /* Reduced size */
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.project-item h3:hover {
+  color: #3498db; /* Blue hover effect */
+  transform: scale(1.05);
+}
+
+/* Project Content */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  padding: 10px;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.project-content:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Project Images */
+.project-content img {
+  width: 100%;
+  max-width: 400px; /* Reduced size */
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+}
+
+/* Paragraph Styling */
+.project-content p {
+  font-size: 1rem; /* Reduced size */
+  font-weight: bold;
+  color: #7f8c8d;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+/* Show Text on Hover */
+.project-item:hover .project-content p {
+  opacity: 1;
+  max-height: 120px;
+  margin-top: 10px;
+}
+
+/* Smooth Fade-in Effect for the Projects Section */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #projects h2 {
+    font-size: 1.5rem;
+  }
+
+  .project-content img {
+    max-width: 100%;
+  }
+
+  .project-content p {
+    font-size: 0.9rem;
+  }
+
+  .project-item {
+    padding: 15px;
+    margin: 10px 0;
+  }
+}
+
+
+/* Achievements Section */
+#achievements {
+  padding: 60px 15px;
+  background-color: #1f2937; /* Light background for a clean, professional look */
+  color: #f9c74f;
+  text-align: center;
+  animation: fadeIn 1.5s ease-out;
+  position: relative;
+}
+
+/* High-Level Styling for H1 */
+#achievements h1 {
+  font-size: 2rem; /* Reduced size */
+  font-weight: 600;
+  color: #f9c74f;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 8px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#achievements h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: #3498db; /* Blue accent underline */
+  transition: width 0.3s ease;
+}
+
+#achievements h1:hover {
+  color: #3498db; /* Hover color */
+  transform: translateY(-3px);
+}
+
+#achievements h1:hover::after {
+  width: 80%;
+}
+
+/* Achievements Container */
+.achievements-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Achievement Styling */
+.achievement {
+  margin: 15px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  width: 260px; /* Reduced width */
+  text-align: left;
+  position: relative;
+}
+
+.achievement:hover {
+  transform: translateY(-10px);
+  background-color: #ecf0f1; /* Light grey background on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Title Styling for Achievements */
+.achievement h3 {
+  font-size: 1.5rem; /* Reduced size */
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.achievement h3:hover {
+  color: #3498db; /* Blue hover effect */
+  transform: scale(1.05);
+}
+
+/* Paragraph Styling for Achievements */
+.achievement p {
+  font-size: 1rem; /* Reduced size */
+  font-weight: 600; /* Slightly less bold */
+  color: #2c3e50; /* Darker color for better contrast */
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+/* Show Text on Hover */
+.achievement:hover p {
+  opacity: 1;
+  max-height: 120px; /* Reduced height */
+  margin-top: 8px;
+}
+
+/* Smooth Fade-in Effect for Achievements Section */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation for Hover Effect */
+@keyframes hoverAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #achievements h1 {
+    font-size: 1.5rem;
+  }
+
+  .achievement {
+    width: 90%; /* Full width on smaller screens */
+    padding: 15px;
+  }
+
+  .achievement p {
+    font-size: 0.9rem; /* Slightly smaller font on smaller screens */
+  }
+}
+
+
+/* Contact Section */
+#contact {
+  padding: 40px 10px; /* Compact padding */
+  background-color: #2c3e50; /* Dark background for consistency */
+  color: #333;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 1.5s ease-out;
+  box-sizing: border-box;
+}
+
+/* High-Level Styling for H2 */
+#contact h2 {
+  font-size: 2rem; /* Reduced font size */
+  font-weight: 600;
+  color: white;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  padding-bottom: 6px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#contact h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: #3498db; /* Blue accent underline */
+  transition: width 0.3s ease;
+}
+
+#contact h2:hover {
+  color: #3498db;
+  transform: translateY(-3px); /* Subtle hover lift */
+}
+
+#contact h2:hover::after {
+  width: 80%; /* Wider underline on hover */
+}
+
+/* Contact Form Styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Reduced gap */
+  max-width: 500px; /* Narrower form */
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.contact-form:hover {
+  transform: translateY(-5px); /* Subtle hover animation */
+}
+
+/* Form Input Styling */
+.contact-form div {
+  width: 100%;
+  text-align: left;
+}
+
+.contact-form label {
+  font-size: 1.1rem; /* Smaller label font size */
+  color: white;
+  font-weight: 600;
+  margin-bottom: 6px; /* Reduced margin */
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.contact-form label:hover {
+  color: #3498db; /* Hover color effect */
+}
+
+/* Input Fields and Textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px; /* Compact padding */
+  font-size: 0.9rem; /* Smaller input font size */
+  border: 1px solid #ddd;
+  border-radius: 4px; /* Softer edges */
+  background-color: #fff;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #3498db; /* Blue focus border */
+  outline: none;
+  transform: scale(1.01); /* Subtle focus scaling */
+}
+
+/* Submit Button Styling */
+.contact-form button {
+  padding: 8px 20px; /* Compact padding */
+  font-size: 1.1rem; /* Reduced button font size */
+  background-color: #3498db; /* Blue background */
+  color: white;
+  border: none;
+  border-radius: 4px; /* Softer edges */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #2980b9; /* Darker blue hover effect */
+  transform: translateY(-3px); /* Subtle lift */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Soft hover shadow */
+}
+
+/* Smooth Fade-in Effect for Contact Section */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #contact h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-form {
+    width: 90%;
+  }
+
+  .contact-form button {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+.resume-button button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.resume-button button:hover {
+  background-color: #0056b3;
+}
+
+
+
+#footer {
+  background-color: #1f2937; /* Dark gray background */
+  color: white; /* White text color for contrast */
+  padding: 20px 0; /* Spacing around the content */
+  text-align: center; /* Center align the content */
+}
+
+.footer-content h3 {
+  font-size: 24px; /* Larger font for the heading */
+  margin-bottom: 15px; /* Space below the heading */
+}
+
+.social-links {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Center the links horizontally */
+  gap: 20px; /* Space between the links */
+}
+
+.social-links li {
+  display: inline-block; /* Inline block for list items */
+}
+
+.social-links a {
+  display: inline-flex; /* Inline flex for the anchor */
+  align-items: center; /* Center align the image */
+  text-decoration: none; /* Remove underline */
+}
+
+.footer-note {
+  margin-top: 15px; /* Space above the footer note */
+  font-size: 14px; /* Smaller font for the note */
+  color: #ccc; /* Light gray text for the note */
+}
